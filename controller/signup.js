@@ -7,12 +7,10 @@ res.render("layout",pagedata);
 });
 
 
-
-
-
 router.post("/",function(req,res){
+var mongo = require("mongodb").MongoClient;
+var url = "mongodb://localhost:27017";
 
-var obj = req.body
 mongo.connect(url,function(err,client){
 	if(err)
 	{
@@ -20,9 +18,9 @@ mongo.connect(url,function(err,client){
 		return;
 	}
 
-var database = client.db("dummydb");
-
-database.collection("signup").insert(obj,function(err,result){
+var database = client.db("project");
+console.log(req.body);
+database.collection("user").insert(req.body,function(err,result){
 	if(err)
 	{
 		console.log("query error", err);
@@ -30,6 +28,8 @@ database.collection("signup").insert(obj,function(err,result){
 	}
 console.log("...........",result);
 // res.redirect("/");
+res.redirect('/login');
+
 });
 
 });
