@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();  //same as var app=x();
+var config = require("../config/db");
 
 router.get("/", function(req,res){
 var pagedata={title:"signup page",pagename:"signup/index"}
@@ -18,7 +19,7 @@ mongo.connect(url,function(err,client){
 		return;
 	}
 
-var database = client.db("project");
+var database = client.db(config.dbName);
 console.log(req.body);
 database.collection("user").insert(req.body,function(err,result){
 	if(err)

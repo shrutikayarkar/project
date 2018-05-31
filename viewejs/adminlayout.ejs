@@ -10,12 +10,7 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<style type="text/css">
-	footer{
-		margin-top: 355px;
-	}
-
-	</style>
+	
 	
 </head>
 <body>
@@ -28,21 +23,20 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
+<a class="navbar-brand" href="#">Administrator Area</a>
+
+	<%if(session.is_admin_logged_in){%>
 <div class="collapse navbar-collapse myNav">
 	<ul class="nav navbar-nav">
-		<li><a href="#">category</a></li>
-		<li><a href="#">category</a></li>
-		<li><a href="#">category</a></li>
-		<li><a href="#">category</a></li>
-		<li><a href="#">category</a></li>
-		<li><a href="#">category</a></li>
-		<li><a href="#">category</a></li>
-		<li><a href="#">category</a></li>
-		<li><a href="#">category</a></li>
-		<li><a href="#">category</a></li>
-		
+	 <li><a href="#">Dashborad</a></li>
+     <li><a href="#">Add Category</a></li>
+     <li><a href="#">Add Product</a></li>
+     <li><a href="#">View Catgory</a></li>
+     <li><a href="#">Add Product</a></li>
+     <li><a href="#">Logout</a></li>
 	</ul>
 </div>
+		<%}%>
 </div>
 
 </div>
