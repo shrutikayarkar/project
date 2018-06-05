@@ -26,14 +26,14 @@
 <a class="navbar-brand" href="#">Administrator Area</a>
 
 	<%if(session.is_admin_logged_in){%>
-<div class="collapse navbar-collapse myNav">
+<div class="collapse navbar-collapse myNav pull-right">
 	<ul class="nav navbar-nav">
-	 <li><a href="#">Dashborad</a></li>
-     <li><a href="#">Add Category</a></li>
-     <li><a href="#">Add Product</a></li>
-     <li><a href="#">View Catgory</a></li>
-     <li><a href="#">Add Product</a></li>
-     <li><a href="#">Logout</a></li>
+	 <li><a href="/admin/dashboard">Dashboard</a></li>
+     <li><a href="/admin/admin_add_category">Add Category</a></li>
+     <li><a href="/admin/admin_add_product">Add Product</a></li>
+     <li><a href="/admin/admin_view_category">View Category</a></li>
+     <li><a href="/admin/admin_view_product">View Product</a></li>
+     <li><a href="/admin/logout">Logout</a></li>
 	</ul>
 </div>
 		<%}%>
@@ -41,9 +41,11 @@
 
 </div>
 </nav>
+<div style="min-height: 780px; height: auto">
 
-<%-include(pagename)%>
+<%-include(pagename);%>
 
+</div>
 
 <footer style="background-color: black"> 
 <div class="container">

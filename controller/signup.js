@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();  //same as var app=x();
-var config = require("../config/db");
+
+var user = require("../model/user");
 
 router.get("/", function(req,res){
 var pagedata={title:"signup page",pagename:"signup/index"}
@@ -9,19 +10,9 @@ res.render("layout",pagedata);
 
 
 router.post("/",function(req,res){
-var mongo = require("mongodb").MongoClient;
-var url = "mongodb://localhost:27017";
 
-mongo.connect(url,function(err,client){
-	if(err)
-	{
-		console.log("connection error",err);
-		return;
-	}
 
-var database = client.db(config.dbName);
-console.log(req.body);
-database.collection("user").insert(req.body,function(err,result){
+user.insert(req.body,function(err,result){
 	if(err)
 	{
 		console.log("query error", err);
@@ -35,6 +26,6 @@ res.redirect('/login');
 
 });
 
-});
+
 
 module.exports=router;
