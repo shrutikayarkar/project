@@ -6,8 +6,11 @@ var pro = require("../model/product");
 
 router.get("/", function(req,res){
 cat.find(function(err,result){
-var pagedata={data:result,prod:pro.getAll,pagename:"index/index",title:"home page"};
+pro.find(function(err,result1){
+var pagedata={data:result,data1:result1,pagename:"index/index",title:"home page"};
 res.render("layout",pagedata);
+	});
+
 });
 
 });

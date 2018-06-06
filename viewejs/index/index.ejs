@@ -45,7 +45,7 @@
 		
 		<div class="row">
 
-			<%prod.forEach(function(obj){%>
+			<%data1.forEach(function(x){%>
 
 		<div class="col-sm-4">
 
@@ -53,11 +53,11 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 
-			<h4><%=obj.productName%><small><br>(Rs.<%=obj.productPrice%>)</small></h4>
+			<h4><%=x.productname%><small><br>(Rs.<%=x.productprice%>)</small></h4>
 			</div>
 
 <div class="panel-body">
-	<img src="<%=obj.imgUrl%>" />
+	<img src="<%=x.productimage%>" />
 </div>
 	<div class="panel-footer">
 		<button class="btn btn-primary btn-sm">Buy</button>
