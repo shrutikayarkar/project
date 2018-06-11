@@ -18,6 +18,14 @@ database.collection('product').find().toArray(cb);
 });
 };
 
+module.exports.remove = function (obj,cb) {
+connect.init(function(err,client){
+var database = client.db(config.dbName);
+database.collection('product').remove(obj,cb);
+
+});
+};
+
 
 
 // module.exports.getAll=[

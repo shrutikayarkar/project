@@ -28,7 +28,8 @@
 		<td> <%=x.discount%> </td>
 	<td><img src="/product_image/<%=x.image%>" height="70" width="70"> </td>
 		<td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#viewModal" >View</button>   </td>
-		<td><button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#delModal">Delete</button>   </td>
+
+		<td><a href="admin_view_product/delete?id=<%= x._id %>" class="btn btn-danger">Delete</a></td>
 	</tr>
 
 <%})%> 
@@ -69,3 +70,5 @@
 
 
 	</div>
+
+	<!-- data-toggle="modal" data-target="#delModal" -->
