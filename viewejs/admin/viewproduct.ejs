@@ -27,15 +27,18 @@
 		<td> <%=x.productdetail%> </td>
 		<td> <%=x.discount%> </td>
 	<td><img src="/product_image/<%=x.image%>" height="70" width="70"> </td>
-		<td><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#viewModal" >View</button>   </td>
 
-		<td><a href="admin_view_product/delete?id=<%= x._id %>" class="btn btn-danger">Delete</a></td>
+		<td><a href="admin_view_product/edit/<%= x._id %>" class="btn btn-danger">View/Update</a></td>
+
+		<!-- <td><a href="admin_view_product/delete?id=<%= x._id %>" class="btn btn-danger">Delete</a></td> -->
+
+		<td><a href="admin_view_product/delete/<%= x._id %>" class="btn btn-danger">Delete</a></td>
 	</tr>
 
 <%})%> 
 	
 	</table>
-
+<!-- MODAL 1 -->
 	<div class="modal fade" id="viewModal">
 <div class="modal-dialog">
 <div class="modal-content">
@@ -51,6 +54,10 @@
 
 </div>
 </div>
+
+
+<!-- MODAL 2 -->
+
 
 <div class="modal fade" id="delModal">
 <div class="modal-dialog">

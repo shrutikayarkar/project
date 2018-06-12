@@ -12,11 +12,17 @@ res.render("adminlayout",pagedata);
 });
 });
 
-router.get("/delete",function(req,res){
-pro.remove({_id:mongodb.ObjectId(req.query.id)},function(err,result){
+router.get("/delete/:id",function(req,res){
+// pro.remove({_id:mongodb.ObjectId(req.query.id)},function(err,result){
+pro.remove({_id:mongodb.ObjectId(req.params.id)},function(err,result){
 console.log(result);
 res.redirect("/admin/admin_view_product");
 
 });
+});
+
+router.get("/edit",function(req,res){
+
+
 });
 module.exports = router;
