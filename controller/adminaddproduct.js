@@ -5,6 +5,7 @@ var pro = require("../model/product");
 var cat = require("../model/category");
 var newfile = require("../helper/changefilename");
 var path = require("path");
+var mongodb = require("mongodb");
 
 router.get("/",function (req,res) {
 cat.find(function(err,result){
@@ -33,6 +34,8 @@ res.redirect("/admin/admin_add_product");
 });
 });
 });
+
+
 
 
 module.exports = router;

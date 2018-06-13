@@ -31,8 +31,8 @@ db.collection('product').find(obj).toArray(cb);
 };
 
 module.exports.updateWhere=function(where, obj, cb){
-console.log("..........."+where);
-console.log(".+++++++++"+obj);
+// console.log("..........."+where);
+// console.log(".+++++++++"+obj);
 connect.init(function(err, client){
 var db = client.db(config.dbName);
 db.collection('product').update(where, {$set : obj}, cb);

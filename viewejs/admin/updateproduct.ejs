@@ -1,0 +1,46 @@
+<div class="container">
+	<h1 class="text-center">Update Product Information</h1>
+</div>
+
+<div class="container">
+<div class="col-sm-8 col-sm-offset-2">
+
+<form action="/admin/admin_view_product/update" method="post" enctype="multipart/form-data">
+
+<label>Product Name</label>
+<input type="text" name="productname" class="form-control" value="<%=data.productname%>">
+
+<label>Product Price</label>
+<input type="text" name="productprice" class="form-control" value="<%=data.productprice%>">
+
+<label>Product Category</label>
+<select class="form-control" name="productcategory">
+
+<option>Select Category</option>
+
+
+
+	<option></option>
+
+
+</select>
+
+<label>Product Detail</label>
+<textarea name="productdetail" class="form-control"><%=data.productdetail%></textarea>
+
+<label>Discount</label>
+<input type="text" name="discount" class="form-control" value="<%=data.discount%>">
+
+<label>Current Image</label>
+<img src="/product_image/<%=data.image%>" height="100" width="100">
+<br>
+
+<label>Product Image</label>
+<input type="file" name="image" class="form-control"><br>
+
+<input type="hidden" name="id" value="<%=data._id%>">
+
+<button type="submit" class="btn btn-danger btn-lg">Update</button>
+</form>
+
+</div>
