@@ -19,8 +19,20 @@
 <option>Select Category</option>
 
 
+<%catedata.forEach(function(x){%>
 
-	<option></option>
+<%if(data.productcategory == x._id)
+{%>
+
+<option selected="selected" value="<%=x._id%>"><%=x.category%></option>
+<%}
+else
+{%>
+
+<option value="<%=x._id%>"><%=x.category%></option>
+<%}%>
+<%})%>
+	
 
 
 </select>

@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 
 var pro = require("../model/product");
+var cat = require("../model/category");
 var mongodb = require("mongodb");
 var imagename = require("../helper/changefilename");
 var path = require("path");
@@ -24,20 +25,22 @@ res.redirect("/admin/admin_view_product");
 });
 
 router.get("/edit/:id",function(req,res){
+cat.find(function(err,result){
+var catedata = result;
+
 pro.findWhere({_id:mongodb.ObjectId(req.params.id)},function(err,result){
-	// console.log("..........."+result);
-	// console.log("+++++++"+result[0]);
-var pagedata = {title:"update product",pagename:"admin/updateproduct",data:result[0]};
+var data = result[0];
+var pagedata = {title:"update product",pagename:"admin/updateproduct",data:data,catedata:catedata};
 res.render("adminlayout",pagedata);
 });
 });
-
+});
 router.post("/update",function(req,res){
 // console.log(req.files);
 var id = req.body.id;
 delete req.body.id;
 
-if(req.files)
+if(req.files.image)
 {
 var file = req.files.image;
 var newname = imagename(file.name);

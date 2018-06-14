@@ -9,6 +9,7 @@ router.use('/signup', require('./signup'));
 router.use('/login', require('./login'));
 router.use('/logout', require('./logout'));
 router.use('/user', backdoor,require('./user'));
+router.use('/category',require('./indexcategory'));
 
 router.use('/admin', require('./admin'));
 router.use('/admin/dashboard', admin_backdoor, require('./admindashboard'));
@@ -17,6 +18,13 @@ router.use('/admin/admin_add_category', admin_backdoor, require('./adminaddcateg
 router.use('/admin/admin_view_category', admin_backdoor, require('./adminviewcategory'));
 router.use('/admin/admin_add_product',require('./adminaddproduct'));
 router.use('/admin/admin_view_product',require('./adminviewproduct'));
+
+
+router.use("*", function(req, res){
+	res.send("<h1>Page Not Found</h1>");
+});
+
+
 
 function backdoor(req,res,next)
 {

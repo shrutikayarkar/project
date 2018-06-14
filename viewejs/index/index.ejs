@@ -23,13 +23,13 @@
 		<div class="row">
 			<div class="col-sm-3">
 				<ul class="list-group">
-					<ol class="breadcrumb" style="background-color: black"><a href="#" style="color: white">Category</a></ol>
+					<ol class="breadcrumb" style="background-color: black"><a href="/" style="color: white">Category</a></ol>
 
 
 
-		<%data.forEach(function(x){%>
+		<%data1.forEach(function(x){%>
 
-			<li class="list-group-item"><a href="#">
+			<li class="list-group-item"><a href="/category/<%=x.category%>/<%=x._id%>">
 			<%=x.category%></a></li>
 
 			<%})%>
@@ -45,7 +45,7 @@
 		
 		<div class="row">
 
-			<%data1.forEach(function(x){%>
+			<%data.forEach(function(x){%>
 
 		<div class="col-sm-4">
 
