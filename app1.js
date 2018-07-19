@@ -17,12 +17,13 @@ app.set("views", "viewejs");	//viewejs is foldername where all ejs files held
 
 //.....ALL USE CODES......
 app.use(parser());
-app.use(express.static(__dirname+"/public"));
 app.use(cookie());
 app.use(session({secret:"abcd123"}));
 app.use(flash());
 app.use(cache());
 app.use(upload());
+
+app.use(express.static(__dirname+"/public"));
 
 app.use(function(req,res,next){
 res.locals.session=req.session;

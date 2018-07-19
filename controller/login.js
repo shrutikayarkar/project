@@ -13,7 +13,7 @@ router.post("/",function(req,res){
 var u = req.body.username;
 var p = req.body.password;
 
-user.find(function(err,result){
+user.findwhere({username:u},function(err,result){
 	if(result.length==0)
 	{
 		req.flash("msg","Invalid username");

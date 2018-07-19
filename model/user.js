@@ -24,3 +24,28 @@ database.collection("user").find().toArray(cb);
 
 });
 };
+
+module.exports.findwhere = function(obj,cb){
+
+connect.init(function(err,client){
+var database = client.db(config.dbName);
+database.collection("user").find(obj).toArray(cb);
+
+});
+};
+
+module.exports.remove = function(obj,cb){
+
+connect.init(function(err,client){
+var database = client.db(config.dbName);
+database.collection("user").remove(obj,cb);
+});
+};
+
+module.exports.update = function(where,obj,cb){
+
+connect.init(function(err,client){
+var database = client.db(config.dbName);
+database.collection("user").update(where,{$set:obj},cb);
+});
+};
